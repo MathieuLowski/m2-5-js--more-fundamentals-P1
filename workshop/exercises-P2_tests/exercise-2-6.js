@@ -19,12 +19,23 @@
 
 function calculator(arr) {
   // Your code here
+  if (arr[0] === "mult") {
+    return arr[1] * arr[2];
+  } else if (arr[0] === "add") {
+    return arr[1] + arr[2];
+  } else return undefined;
 }
 
 // Step 2
 // We need 8 total test cases. The first two is provided.
-expect(calculator(['mult', 2, 4]), 8);
-expect(calculator(['add', 2, 4]), 6);
+expect(calculator(["mult", 2, 4]), 8);
+expect(calculator(["add", 2, 4]), 6);
+expect(calculator(["spoof", 2, 4]), undefined);
+expect(calculator(["add", 5, 7]), 12);
+expect(calculator(["mult", 1, 4]), 4);
+expect(calculator(["smt", 2, 4]), undefined);
+expect(calculator(["mult", 2, 4]), 8);
+expect(calculator(["divide", 2, 4]), undefined);
 
 /**
  * -------------------------------------------------------------------
@@ -33,7 +44,7 @@ expect(calculator(['add', 2, 4]), 6);
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }

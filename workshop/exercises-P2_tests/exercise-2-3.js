@@ -10,11 +10,23 @@
 
 function sumDigits(input) {
   // Your code here
+  if (
+    input.length !== 2 ||
+    typeof input[0] === "string" ||
+    typeof input[1] === "string"
+  ) {
+    return undefined;
+  } else return input[0] + input[1];
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
+expect(sumDigits([-25, 25]), 0);
+expect(sumDigits([100, 25]), 125);
+expect(sumDigits(["pickle", "rick"]), undefined);
+expect(sumDigits(["jordan", 23]), undefined);
+expect(sumDigits([0, 100]), 100);
 
 /**
  * -------------------------------------------------------------------
@@ -23,7 +35,7 @@ expect(sumDigits([-1, 0]), -1);
  */
 function expect(result, value) {
   if (result === value) {
-    console.log('✅ Test succeeded');
+    console.log("✅ Test succeeded");
   } else {
     console.log(`⛔️ Expected “${result}” to equal “${value}”`);
   }

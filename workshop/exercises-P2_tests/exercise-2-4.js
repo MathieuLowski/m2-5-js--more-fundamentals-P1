@@ -11,6 +11,13 @@
 
 function getLetterAtIndex(str, index) {
   // Your code here
+  let letter = str.charAt(i);
+  if (str === ''){
+    return undefined;
+  }
+  else return letter;
+
+  
 }
 
 // Add 6 more test cases
