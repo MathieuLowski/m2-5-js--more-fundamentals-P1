@@ -8,9 +8,13 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
+  console.log(str);
   // Your code here
-  if (str.charAt(str.length - 1) === " ") return undefined;
-  return str.charAt(str.length - 1);
+  if (typeof str !== "string") {
+    return undefined;
+  } else if (str.charAt(str.length - 1) === "") {
+    return undefined;
+  } else return str.charAt(str.length - 1);
 }
 
 // Step 2
@@ -20,18 +24,12 @@ function lastCharacter(str) {
 expect(lastCharacter("max"), "x");
 expect(lastCharacter("Mortimer"), "r");
 expect(lastCharacter("Falcon-9"), "9");
-expect(lastCharacter(" "), "undefined");
-expect(lastCharacter("26"), "undefined");
+expect(lastCharacter(""), undefined);
+expect(lastCharacter(5), undefined);
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
 // Be creative with your tests!
-// There's an old joke about QA (Quality Assurance) testers:
-//
-//   “A QA tester walks into a bar. He orders a beer, and then 1000 beers,
-//    and then -1 beers, and then "malaise" beers, and then -Infinity beers…”
-//
-// 😂
 
 /**
  * -------------------------------------------------------------------
